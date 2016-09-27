@@ -1,3 +1,4 @@
+# coding: utf-8
 source 'https://rubygems.org'
 
 ruby '2.2.2'
@@ -58,10 +59,14 @@ gem 'pry'
 gem 'pry-nav'
 gem 'pry-doc'
 
+group :development, :test do
+  gem 'rspec-rails'    # Test framework with Rail extensions
+  gem 'mailcatcher', require: false
+end
 
 group :test do
   gem 'guard-rspec'    # Continuous testing
-  gem 'rspec-rails'    # Test framework with Rail extensions
   gem 'poltergeist'    # Driver for PhantomJS headless browser
   gem 'capybara'       # DSL for browser control
+  gem 'launchy'
 end

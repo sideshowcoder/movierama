@@ -66,9 +66,18 @@ If not, you'll need to get your own OAuth tokens from Github and edit
 `.env` appropriately.
 
 
-
 ### Screenshot
 
 So you know what to expect. This app's just a toy, remember?
 
 ![](https://dl.dropboxusercontent.com/spa/cbazgcyvth7jydp/-4eusn-o.png)
+
+### Emails
+
+Emails can be [pre-viewed](https://movierama.dev/rails/mailers) and are available
+in html as well as text.
+
+In development emails are sent via mailcatcher, to make this work mailcatcher
+needs to be running `mailcatcher`. View the mails at
+[the interface](http://127.0.0.1:1080) in a browser.
+

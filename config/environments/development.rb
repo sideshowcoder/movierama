@@ -31,4 +31,12 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Mailer previews
+  config.action_mailer.preview_path = "#{Rails.root}/app/mailers"
+
+  # Email goes to mailcatcher in development
+  config.action_mailer.default_url_options = { :host => 'movierama.dev' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => 'movierama.dev', :port => 1025 }
 end

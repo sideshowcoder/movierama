@@ -6,6 +6,8 @@ Rails.application.configure do
 
   config.middleware.use ActionDispatch::Flash
   config.middleware.insert 0, Rack::SSL
+
+  config.site_url = ENV.fetch("SITEURL", "https://movierama.dev")
 end
 
 # Initialize the Rails application.
