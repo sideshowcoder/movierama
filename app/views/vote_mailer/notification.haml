@@ -5,12 +5,12 @@
 
   %body
     %h1
-      = @voter.name
+      = @data.voter_name
       reacted to
-      = @movie.title
+      = @data.movie.title
     %p
       Visit
-      = link_to "Movierama", @url
+      = link_to @data.link_name, @data.url
       to see what is going on!
 
     %p

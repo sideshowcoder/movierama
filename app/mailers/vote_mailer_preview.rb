@@ -1,6 +1,7 @@
 class VoteMailerPreview < ActionMailer::Preview
   def notification
-    VoteMailer.notification(default_movie, default_user)
+    data = NotificationData.new(default_user, default_movie)
+    VoteMailer.notification(data)
   end
 
   private

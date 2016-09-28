@@ -16,11 +16,7 @@ class User < BaseModel
   # Submitted movies
   collection :movies, :Movie
 
-  def formatted_email
-    "#{name} <#{email}>"
-  end
-
-  def subscribed?
+  def email?
     email.present?
   end
 end

@@ -14,7 +14,7 @@ class VotingBooth
     unvote # to guarantee consistency
     set.add(@user)
     _update_counts
-    notify!
+    yield if block_given?
     self
   end
   
@@ -26,11 +26,6 @@ class VotingBooth
   end
 
   private
-
-  def notify!
-    VoteMailer.notification(@movie, @user).deliver if @movie.user.subscribed?
-  end
-
   def _update_counts
     @movie.update(
       liker_count: @movie.likers.size,

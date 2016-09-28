@@ -2,7 +2,9 @@ class VotesController < ApplicationController
   def create
     authorize! :vote, _movie
 
-    _voter.vote(_type)
+    _voter.vote(_type) do
+      _notification.trigger
+    end
     redirect_to root_path, notice: 'Vote cast'
   end
 
@@ -17,6 +19,10 @@ class VotesController < ApplicationController
 
   def _voter
     VotingBooth.new(current_user, _movie)
+  end
+
+  def _notification
+    NotificationCenter.new(current_user, _movie)
   end
 
   def _type
